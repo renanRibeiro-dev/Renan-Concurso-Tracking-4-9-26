@@ -7,17 +7,7 @@ import { setCurrentAssunto } from "./lib/state.js";
 const currentScreen = "inicial";
 const app = document.getElementById("app");
 
-function onNavigate(screen) {
-  if (screen === "registrar-questao") {
-    const popupContainer = document.createElement("div");
-    document.body.appendChild(popupContainer);
-    mountRegistrarQuestao(popupContainer, {
-      onClose: () => popupContainer.remove()
-    });
-    return;
-  }
-  console.log("ir para:", screen);
-}
+
 
 function render() {
   switch (currentScreen) {
