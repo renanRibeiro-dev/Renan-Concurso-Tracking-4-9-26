@@ -1,5 +1,6 @@
 import "./seletor.style.css";
 import { getAppData } from "../lib/supabase.js";
+import { getAppData, getAppDataByKey } from "../lib/supabase.js";
 
 function uniq(arr) {
   return [...new Set(arr)];
@@ -160,10 +161,10 @@ export function mount(container, { onSelect, onClose }) {
     root.appendChild(modal);
   }
 
-  getAppData("subtopicos").then((data) => {
-    subtopicos = data || [];
-    render();
-  });
+  getAppDataByKey("subtopicos").then((data) => {
+  subtopicos = typeof data === "string" ? JSON.parse(data) : data || [];
+  render();
+});
 
   render(); // estado inicial de loading (lista vazia até o fetch resolver)
 }
