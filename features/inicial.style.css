@@ -1,0 +1,118 @@
+/* features/inicial.style.css
+   Estilos exclusivos da tela inicial. Reset, cores base e fontes globais
+   vêm de style.css (raiz) — aqui só o que é específico desta tela. */
+
+.inicial {
+  min-height: 100dvh;
+  min-height: 100vh; /* fallback para navegadores sem dvh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+}
+
+.inicial__card {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Selo de desempenho: pílula pequena, discreta, alinhada à direita */
+.inicial__desempenho {
+  align-self: flex-end;
+  background-color: #2e7d4f;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.inicial__desempenho:focus-visible,
+.inicial__botao:focus-visible {
+  outline: 3px solid #f2f2f2;
+  outline-offset: 2px;
+}
+
+/* Visor: onde entra o dado vindo do banco (assunto atual) */
+.inicial__visor {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  border-radius: 14px;
+  padding: 28px 22px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.inicial__visor-label {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #a3a3a3;
+}
+
+.inicial__visor-texto {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+/* Botões de ação: grandes, circulares, um significado de cor cada */
+.inicial__acoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.inicial__botao {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  min-width: 76px;
+  min-height: 76px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.9rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.inicial__botao:active {
+  transform: scale(0.93);
+}
+
+.inicial__botao--vermelho {
+  background-color: #c0392b;
+}
+
+.inicial__botao--amarelo {
+  background-color: #b8860b;
+}
+
+.inicial__botao--azul {
+  background-color: #1f4fd6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inicial__botao {
+    transition: none;
+  }
+}
+
+@media (min-width: 420px) {
+  .inicial__card {
+    max-width: 380px;
+  }
+}

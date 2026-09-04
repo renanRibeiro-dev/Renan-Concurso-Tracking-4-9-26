@@ -1,0 +1,33 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Configs locais / segredos
+.env
+.env.local
+.env.*.local
+*.local
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build / Vite
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# Backups e arquivos temporários
+*.bak
+*.tmp
+*~

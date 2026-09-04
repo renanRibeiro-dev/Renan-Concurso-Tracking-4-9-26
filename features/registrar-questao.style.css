@@ -1,0 +1,126 @@
+.rq-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.rq-card {
+  position: relative;
+  width: 320px;
+  max-width: 90vw;
+  background: #1a1a1a;
+  border: 1px solid #ffff99;
+  border-radius: 8px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.rq-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #990000;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.rq-close:hover {
+  background: rgba(153, 0, 0, 0.15);
+}
+
+.rq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rq-label {
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.rq-input {
+  background: #000066;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.rq-input::placeholder {
+  color: #99a3d9;
+}
+
+.rq-static {
+  background: #000066;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.rq-resultado {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.rq-btn {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.rq-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.rq-btn-certo {
+  background: #003300;
+}
+
+.rq-btn-certo:hover:not(:disabled) {
+  background: #004d00;
+}
+
+.rq-btn-pulou {
+  background: #0000cc;
+}
+
+.rq-btn-pulou:hover:not(:disabled) {
+  background: #0000ff;
+}
+
+.rq-btn-errado {
+  background: #660000;
+}
+
+.rq-btn-errado:hover:not(:disabled) {
+  background: #990000;
+}
+
+.rq-erro {
+  color: #ff6666;
+  font-size: 12px;
+  margin: 0;
+}
