@@ -1,5 +1,4 @@
 import "./seletor.style.css";
-import { getAppData } from "../lib/supabase.js";
 import { getAppData, getAppDataByKey } from "../lib/supabase.js";
 
 function uniq(arr) {
