@@ -1,9 +1,27 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram name="Page-1" id="Iz0nGRAe8zm2U9sItG4i">
-    <mxGraphModel dx="532" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="513" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Lh01qtFHKJ4TPXGnr4TY-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FFFF66;" value="" vertex="1">
+          <mxGeometry height="230" width="200" x="30" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LKS7FY9TZhJzKDYBlZ6E-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#5C5C00;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="107.5" y="360.00000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh01qtFHKJ4TPXGnr4TY-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000099;" value="+" vertex="1">
+          <mxGeometry height="40" width="40" x="167" y="360.4200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh01qtFHKJ4TPXGnr4TY-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A1A1A;" value="Subtopico Determinado pelo algoritmo/Escolhido via botão amarelo" vertex="1">
+          <mxGeometry height="87.5" width="180" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Lh01qtFHKJ4TPXGnr4TY-4" parent="1" style="shape=mxgraph.basic.arc;html=1;startAngle=0.3;endAngle=0.1;endArrow=classic;endFill=1;fillColor=#333300;" value="" vertex="1">
+          <mxGeometry height="35" width="35" x="110" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="LKS7FY9TZhJzKDYBlZ6E-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#990000;" value="x" vertex="1">
+          <mxGeometry height="40" width="40" x="50" y="359.58" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

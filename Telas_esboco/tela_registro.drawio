@@ -1,0 +1,34 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="f3L6YijCQ1Ntps9BFS1s">
+    <mxGraphModel dx="513" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="320" width="200" x="50" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=#999900;container=0;" value="Caderno - Link" vertex="1">
+          <mxGeometry height="57.206071428571434" width="137.5" x="78.75" y="215.82571428571418" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000066;container=0;" value="Nº - Questão" vertex="1">
+          <mxGeometry height="44.27464285714286" width="137.5" x="78.75" y="337.61142857142863" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660000;container=0;" value="Errado" vertex="1">
+          <mxGeometry height="34.133214285714274" width="40" x="180" y="404.03999999999996" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003300;container=0;" value="Certo&amp;nbsp;" vertex="1">
+          <mxGeometry height="34.133214285714274" width="40" x="75" y="404.03999999999996" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0000CC;container=0;" value="Pulou" vertex="1">
+          <mxGeometry height="34.133214285714274" width="50" x="122.5" y="404.03999999999996" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000066;container=0;" value="Mini-Assunto" vertex="1">
+          <mxGeometry height="44.28571428571428" width="137.5" x="78.75" y="282.25428571428574" as="geometry" />
+        </mxCell>
+        <mxCell id="tS-ymWNTZ7ZIBsyTWbEs-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#006600;container=0;" value="Registrar Questão" vertex="1">
+          <mxGeometry height="33.21428571428571" width="160" x="67.5" y="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
