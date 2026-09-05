@@ -1,0 +1,101 @@
+.rt {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.rt__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rt__voltar {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.rt__titulo {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.rt__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.rt__estado {
+  text-align: center;
+  color: #666;
+  margin-top: 40px;
+}
+
+.rt__estado--erro {
+  color: #c0392b;
+}
+
+.rt__card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.rt__card-assunto {
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.rt__card-info {
+  margin: 0 0 4px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.rt__card-progresso {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.rt__card-acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.rt__btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+
+.rt__btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.rt__btn--errado {
+  background: #e74c3c;
+}
+
+.rt__btn--pulou {
+  background: #f1c40f;
+  color: #333;
+}
+
+.rt__btn--certo {
+  background: #2ecc71;
+}

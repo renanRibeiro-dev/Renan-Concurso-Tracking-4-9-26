@@ -2,17 +2,20 @@ import "./style.css";
 import { mount as mountInicial } from "./features/inicial.view.js";
 import { mount as mountRegistrarQuestao } from "./features/registrar-questao.view.js";
 import { mount as mountSeletor } from "./features/seletor.view.js";
+import { mount as mountReteste } from "./features/reteste.view.js";
 import { setCurrentAssunto } from "./lib/state.js";
 
-const currentScreen = "inicial";
+let currentScreen = "inicial";
 const app = document.getElementById("app");
-
-
 
 function render() {
   switch (currentScreen) {
     case "inicial":
       mountInicial(app, { onNavigate });
+      break;
+
+    case "reteste":
+      mountReteste(app, { onNavigate });
       break;
 
     default:
@@ -31,11 +34,17 @@ function abrirSeletor(onDone) {
       if (onDone) onDone(assunto);
     },
     onClose: () => popupContainer.remove()
-    
+
   });
 }
 
 function onNavigate(screen) {
+  if (screen === "inicial" || screen === "reteste") {
+    currentScreen = screen;
+    render();
+    return;
+  }
+
   if (screen === "registrar-questao") {
     const c = document.createElement("div");
     document.body.appendChild(c);
