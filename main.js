@@ -31,6 +31,7 @@ function abrirSeletor(onDone) {
       if (onDone) onDone(assunto);
     },
     onClose: () => popupContainer.remove()
+    
   });
 }
 
@@ -41,7 +42,7 @@ function onNavigate(screen) {
     mountRegistrarQuestao(c, { onClose: () => c.remove() });
     return;
   }
-  if (screen === "trocar-disciplina") {
+ if (screen === "trocar-disciplina" || screen === "miniassunto") {
     abrirSeletor(() => render()); // atualiza a tela inicial após escolher
     return;
   }
