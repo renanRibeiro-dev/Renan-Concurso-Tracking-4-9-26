@@ -160,10 +160,13 @@ export function mount(container, { onSelect, onClose }) {
     root.appendChild(modal);
   }
 
-  getAppDataByKey("subtopicos").then((data) => {
-  subtopicos = typeof data === "string" ? JSON.parse(data) : data || [];
-  render();
-});
-
-  render(); // estado inicial de loading (lista vazia até o fetch resolver)
+  getAppDataByKey("subtopicos")
+  .then((data) => {
+    subtopicos = Array.isArray(data) ? data : [];
+    console.log("subtopicos carregados:", subtopicos);
+    render();
+  })
+  .catch((err) => {
+    console.error("Erro ao buscar subtopicos:", err);
+  });
 }
