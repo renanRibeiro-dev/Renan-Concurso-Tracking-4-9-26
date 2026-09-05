@@ -122,9 +122,13 @@ export function mount(container, { onNavigate } = {}) {
 
       const seq = questao.r_seq_acertos || 0;
       const label = subtopicoLabels[questao.subtopico_id] || "Assunto não identificado";
+      const miniassuntoHtml = questao.miniassunto
+        ? `<p class="rt__card-miniassunto">${escapeHtml(questao.miniassunto)}</p>`
+        : "";
 
       card.innerHTML = `
         <p class="rt__card-assunto">${escapeHtml(label)}</p>
+        ${miniassuntoHtml}
         <p class="rt__card-info">
           ${escapeHtml(questao.caderno || "")}${questao.caderno ? " · " : ""}Questão ${escapeHtml(String(questao.numero))}
         </p>

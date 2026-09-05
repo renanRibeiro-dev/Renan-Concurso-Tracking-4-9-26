@@ -88,6 +88,7 @@ export function mount(container, { onClose, onEscolherAssunto, subtopicoId, mini
           caderno: cadernoInput.value.trim(),
           numero,
           resultado,
+          miniassunto: miniAssunto || null,
         });
         await marcarMiniassuntoEstudado(subtopicoId, miniAssunto);
         fechar();
