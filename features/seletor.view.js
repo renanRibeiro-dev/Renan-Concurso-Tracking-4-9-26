@@ -1,6 +1,12 @@
 import "./seletor.style.css";
 import { getAppData, getAppDataByKey } from "../lib/supabase.js";
 
+const MATERIA_QUENTE = new Set([
+  'Mecânica dos Fluidos', 'Máquinas de Fluxo', 'Termodinâmica', 'Motores de Combustão Interna',
+  'Ciclos de Geração de Potência', 'Transmissão do Calor', 'Resistência dos Materiais',
+  'Fundamentos da Dinâmica', 'Vibrações Mecânicas', 'Soldagem', 'Corrosão'
+]);
+
 function uniq(arr) {
   return [...new Set(arr)];
 }
@@ -154,6 +160,9 @@ export function mount(container, { onSelect, onClose }) {
           const completo = item.status === "completo";
           row.classList.add(item.quente ? "seletor-item--quente" : "seletor-item--frio");
           if (completo) row.classList.add("seletor-item--completo");
+        } else if (state.level === 2) {
+          row.textContent = item;
+          row.classList.add(MATERIA_QUENTE.has(item.trim()) ? "seletor-item--quente" : "seletor-item--frio");
         } else {
           row.textContent = item;
         }
@@ -163,7 +172,7 @@ export function mount(container, { onSelect, onClose }) {
       });
     }
     modal.appendChild(header);
-    
+
     modal.appendChild(list);
     root.appendChild(modal);
   }
