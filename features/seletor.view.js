@@ -13,7 +13,7 @@ function uniq(arr) {
 
 export function mount(container, { onSelect, onClose }) {
   let subtopicos = [];
-  let state = {
+    let state = {
     level: 1, // 1=categoria, 2=materia, 3=subtopico, 4=miniassunto
     categoria: null,
     materia: null,
@@ -30,13 +30,14 @@ export function mount(container, { onSelect, onClose }) {
     if (onClose) onClose();
   }
 
-  function back() {
+    function back() {
     if (state.level === 2) {
       state.level = 1;
-      state.categoria = null;
+      state.grupo = null;
     } else if (state.level === 3) {
       state.level = 2;
       state.materia = null;
+      state.categoria = null;
     } else if (state.level === 4) {
       state.level = 3;
       state.subtopico = null;
@@ -57,21 +58,22 @@ export function mount(container, { onSelect, onClose }) {
     if (onSelect) onSelect(payload);
   }
 
-  function getItemsForLevel() {
+    function getItemsForLevel() {
     if (state.level === 1) {
-      return uniq(subtopicos.map((s) => s.categoria));
+      return ["Conhecimento Geral", "Conhecimento Específico"];
     }
     if (state.level === 2) {
+      const categorias = state.grupo === "Conhecimento Geral"
+        ? ["portugues", "ingles"]
+        : ["especifica"];
       return uniq(
         subtopicos
-          .filter((s) => s.categoria === state.categoria)
+          .filter((s) => categorias.includes(s.categoria))
           .map((s) => s.materia)
       );
     }
     if (state.level === 3) {
-      return subtopicos.filter(
-        (s) => s.categoria === state.categoria && s.materia === state.materia
-      );
+      return subtopicos.filter((s) => s.materia === state.materia);
     }
     if (state.level === 4) {
       const item = subtopicos.find((s) => s.id === state.subtopicoId);
@@ -80,21 +82,23 @@ export function mount(container, { onSelect, onClose }) {
     return [];
   }
 
-  function getTitle() {
-    if (state.level === 1) return "Disciplina";
-    if (state.level === 2) return "Tópico";
+    function getTitle() {
+    if (state.level === 1) return "Área";
+    if (state.level === 2) return "Matéria";
     if (state.level === 3) return "Subtópico";
     if (state.level === 4) return "Miniassunto";
     return "";
   }
 
-  function selectItem(item) {
+    function selectItem(item) {
     if (state.level === 1) {
-      state.categoria = item;
+      state.grupo = item;
       state.level = 2;
       render();
     } else if (state.level === 2) {
       state.materia = item;
+      const match = subtopicos.find((s) => s.materia === item);
+      state.categoria = match ? match.categoria : null;
       state.level = 3;
       render();
     } else if (state.level === 3) {
