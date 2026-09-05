@@ -1,7 +1,7 @@
 import "./registrar-questao.style.css";
 import { salvarQuestao, marcarMiniassuntoEstudado } from "../lib/supabase.js";
 
-export function mount(container, { onClose, onEscolherAssunto, subtopicoId, miniAssunto = "", caderno: cadernoInicial = "" } = {}) {
+export function mount(container, { onClose, onEscolherAssunto, subtopicoId, miniAssunto = "", miniAssuntoSelecionado = false, caderno: cadernoInicial = "" } = {}) {
   const overlay = document.createElement("div");
   overlay.className = "rq-overlay";
 
@@ -90,7 +90,9 @@ export function mount(container, { onClose, onEscolherAssunto, subtopicoId, mini
           resultado,
           miniassunto: miniAssunto || null,
         });
-        await marcarMiniassuntoEstudado(subtopicoId, miniAssunto);
+        if (miniAssuntoSelecionado) {
+          await marcarMiniassuntoEstudado(subtopicoId, miniAssunto);
+        }
         fechar();
       } catch (err) {
         console.error("Erro ao salvar questão:", err);

@@ -63,6 +63,7 @@ function onNavigate(screen) {
             onClose: () => c2.remove(),
             subtopicoId: assunto.subtopicoId,
             miniAssunto: assunto.miniassunto || assunto.subtopico,
+            miniAssuntoSelecionado: !!assunto.miniassunto,
             onEscolherAssunto: () => {
               c2.remove();
               onNavigate("registrar-questao");
