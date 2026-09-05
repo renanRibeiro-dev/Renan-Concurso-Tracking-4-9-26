@@ -1,7 +1,7 @@
 import "./registrar-questao.style.css";
 import { salvarQuestao } from "../lib/supabase.js";
 
-export function mount(container, { onClose, subtopicoId, miniAssunto = "", caderno: cadernoInicial = "" } = {}) {
+export function mount(container, { onClose, onEscolherAssunto, subtopicoId, miniAssunto = "", caderno: cadernoInicial = "" } = {}) {
   const overlay = document.createElement("div");
   overlay.className = "rq-overlay";
 
@@ -19,7 +19,7 @@ export function mount(container, { onClose, subtopicoId, miniAssunto = "", cader
 
     <div class="rq-field">
       <label class="rq-label">Mini-Assunto</label>
-      <div class="rq-static">${escapeHtml(miniAssunto)}</div>
+      <button type="button" class="rq-static" id="rq-miniassunto" style="text-align:left; cursor:pointer; width:100%;">${escapeHtml(miniAssunto) || "Toque para escolher"}</button>
     </div>
 
     <div class="rq-field">
@@ -43,6 +43,10 @@ export function mount(container, { onClose, subtopicoId, miniAssunto = "", cader
   const numeroInput = card.querySelector("#rq-numero");
   const cadernoInput = card.querySelector("#rq-caderno");
   const resultadoBtns = card.querySelectorAll("[data-resultado]");
+  const miniAssuntoBtn = card.querySelector("#rq-miniassunto");
+  if (miniAssuntoBtn && typeof onEscolherAssunto === "function") {
+    miniAssuntoBtn.addEventListener("click", onEscolherAssunto);
+  }
 
   function fechar() {
     overlay.remove();

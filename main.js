@@ -39,7 +39,27 @@ function onNavigate(screen) {
   if (screen === "registrar-questao") {
     const c = document.createElement("div");
     document.body.appendChild(c);
-    mountRegistrarQuestao(c, { onClose: () => c.remove() });
+    let assuntoAtual = null;
+    mountRegistrarQuestao(c, {
+      onClose: () => c.remove(),
+      onEscolherAssunto: () => {
+        c.remove();
+        abrirSeletor((assunto) => {
+          assuntoAtual = assunto;
+          const c2 = document.createElement("div");
+          document.body.appendChild(c2);
+          mountRegistrarQuestao(c2, {
+            onClose: () => c2.remove(),
+            subtopicoId: assunto.subtopicoId,
+            miniAssunto: assunto.miniassunto || assunto.subtopico,
+            onEscolherAssunto: () => {
+              c2.remove();
+              onNavigate("registrar-questao");
+            },
+          });
+        });
+      },
+    });
     return;
   }
  if (screen === "trocar-disciplina" || screen === "miniassunto") {
