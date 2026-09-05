@@ -148,12 +148,19 @@ export function mount(container, { onSelect, onClose }) {
       items.forEach((item) => {
         const row = document.createElement("button");
         row.className = "seletor-item";
-        row.textContent =
-          state.level === 3 ? item.subtopico : item;
+
+        if (state.level === 3) {
+          row.textContent = item.subtopico;
+          const completo = item.status === "completo";
+          row.classList.add(item.quente ? "seletor-item--quente" : "seletor-item--frio");
+          if (completo) row.classList.add("seletor-item--completo");
+        } else {
+          row.textContent = item;
+        }
+
         row.onclick = () => selectItem(item);
         list.appendChild(row);
       });
-    }
 
     modal.appendChild(header);
     modal.appendChild(list);

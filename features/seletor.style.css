@@ -47,22 +47,41 @@
   padding: 8px;
 }
 
+.seletor-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
 .seletor-item {
-  display: block;
-  width: 100%;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: #2a2a2a;
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px 12px;
-  margin-bottom: 6px;
+  padding: 12px 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  min-height: 64px;
 }
 
 .seletor-item:hover {
+  filter: brightness(1.15);
+}
+
+.seletor-item--quente {
   background: #ff8000;
+}
+
+.seletor-item--frio {
+  background: #0066cc;
+}
+
+.seletor-item--completo {
+  opacity: 0.4;
 }
 
 .seletor-empty {
