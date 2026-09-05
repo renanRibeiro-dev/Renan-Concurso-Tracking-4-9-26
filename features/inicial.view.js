@@ -10,6 +10,7 @@
 // onNavigate(nome) se ela for passada — a troca real de tela fica a cargo
 // do main.js, que ainda não existe.
 import "./inicial.style.css";
+import { getCurrentAssunto } from "../lib/state.js";
 export function mount(container, { onNavigate } = {}) {
   container.innerHTML = `
     <section class="inicial">
@@ -80,9 +81,12 @@ function preencherVisorPlaceholder(container) {
   const texto = container.querySelector('[data-el="subtopico-texto"]');
   const desempenho = container.querySelector('[data-el="desempenho-valor"]');
 
+  const assunto = getCurrentAssunto();
+
   if (texto) {
-    texto.textContent =
-      'Subtópico determinado pelo algoritmo / escolhido via botão de trocar disciplina';
+    texto.textContent = assunto
+      ? `${assunto.materia} — ${assunto.subtopico}`
+      : 'Nenhum assunto selecionado ainda';
   }
   if (desempenho) {
     desempenho.textContent = '--%';
