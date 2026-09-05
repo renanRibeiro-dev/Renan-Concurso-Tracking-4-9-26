@@ -161,8 +161,9 @@ export function mount(container, { onSelect, onClose }) {
         row.onclick = () => selectItem(item);
         list.appendChild(row);
       });
-
+    }
     modal.appendChild(header);
+    
     modal.appendChild(list);
     root.appendChild(modal);
   }
