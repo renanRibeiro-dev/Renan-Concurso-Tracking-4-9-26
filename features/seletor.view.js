@@ -112,7 +112,7 @@ export function mount(container, { onSelect, onClose }) {
         finish(null);
       }
     } else if (state.level === 4) {
-      finish(item);
+      finish(item.nome);
     }
   }
 
@@ -164,13 +164,15 @@ export function mount(container, { onSelect, onClose }) {
           const completo = item.status === "completo";
           row.classList.add(item.quente ? "seletor-item--quente" : "seletor-item--frio");
           if (completo) row.classList.add("seletor-item--completo");
-        } else if (state.level === 2) {
+         } else if (state.level === 2) {
           row.textContent = item;
           row.classList.add(MATERIA_QUENTE.has(item.trim()) ? "seletor-item--quente" : "seletor-item--frio");
+        } else if (state.level === 4) {
+          row.textContent = item.nome;
         } else {
           row.textContent = item;
         }
-
+        
         row.onclick = () => selectItem(item);
         list.appendChild(row);
       });
